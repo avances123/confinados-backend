@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_gis',
 
-    'zonas'
+    'zonas',
+    'foro'
 ]
 
 MIDDLEWARE = [
