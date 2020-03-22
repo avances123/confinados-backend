@@ -1,9 +1,15 @@
 from rest_framework_gis.serializers import GeoModelSerializer, GeoFeatureModelSerializer
-from zonas.models import Zona
+from rest_framework.serializers import ModelSerializer
+from zonas.models import Zona, Mensaje
 
 
-#class ZonaSerializer(GeoFeatureModelSerializer): # para el geojson
+class MensajeSerializer(ModelSerializer):
+    class Meta:
+        model = Mensaje
+        fields = ['zona', 'texto']
+
 class ZonaSerializer(GeoModelSerializer):
+
     class Meta:
         model = Zona
         geo_field = "mpoly"
