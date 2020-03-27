@@ -18,7 +18,7 @@ class MensajeViewSet(viewsets.ModelViewSet):
         zona_id= self.request.query_params.get('zona', None)
         queryset = Mensaje.objects.all()
         if zona_id is not None:
-            queryset = queryset.filter(zona=zona_id)
+            queryset = queryset.filter(zona=zona_id).order_by('-id')
         else:
             queryset = queryset.order_by('-id')[:10]
 

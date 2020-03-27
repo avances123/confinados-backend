@@ -6,7 +6,7 @@ from zonas.models import Zona, Mensaje
 class MensajeSerializer(ModelSerializer):
     class Meta:
         model = Mensaje
-        fields = ['zona', 'texto']
+        fields = ['zona', 'texto', 'updated' , 'autor', 'titulo']
 
 class ZonaSerializer(GeoModelSerializer):
 
